@@ -1,41 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./Develop/css/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./Develop/css/style.css" />
     <title>Weather Dashboard</title>
-</head>
-<body>
+  </head>
+  <body>
     <header class="weatherHeader">
-        <h1>Weather Dashbord</h1>
-        <form>
-            <label for="search-input">Search for a City:</label>
-            <input type="text" id="search-input" name="city" placeholder="Enter a city name">
-            <button type="submit">Search</button>
-          </form>
-
+      <h1>Weather Dashbord</h1>
+      <label for="search-input">Search for a City:</label>
+      <input
+        type="text"
+        id="search-input"
+        name="city"
+        placeholder="Enter a city name"
+      />
+      <button id="search-btn">Search</button>
     </header>
 
     <main>
-        <div class="current-weather">
-            <h2 id="city-name">City Name</h2>
-            <p id="date">Date</p>
-            <img src="" alt="" id="weather-icon">
-            <p id="temperature">Temperature</p>
-            <p id="humidity">Humidity</p>
-            <p id="wind-speed">Wind Speed</p>
-          </div>
+      <div class="current-weather">
+        <h2 id="city-name">City Name</h2>
+        <p id="date">Date</p>
+        <img src="" alt="" id="weather-icon" />
+        <p id="temperature">Temperature</p>
+        <p id="humidity">Humidity</p>
+        <p id="wind-speed">Wind Speed</p>
+      </div>
     </main>
 
     <section>
-        <div class="forecast">
+      <div class="forecast">
         <h2>5-Day Forecast:</h2>
         <div class="forecast-container">
           <div class="day">
             <p class="date">Date</p>
-            <img src="" alt="" class="weather-icon">
+            <img src="" alt="" class="weather-icon" />
             <p class="temperature">Temperature</p>
             <p class="humidity">Humidity</p>
           </div>
@@ -43,11 +45,6 @@
         </div>
       </div>
     </section>
-    
-
-
-    
-    <script src="https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}"></script>
     <script src="./Develop/js/script.js"></script>
-</body>
+  </body>
 </html>
