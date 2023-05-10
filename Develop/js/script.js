@@ -91,3 +91,13 @@ function getFiveDayWeather(lat, lon) {
     console.log(error);
   }
 }
+
+
+function addToSearchHistory(cityName) {
+  // Add the city name to the search history array
+  searchHistory.push(cityName);
+
+  // Create an HTML element for the new search history item
+  const searchHistoryItem = document.createElement("li");
+  searchHistoryItem.textContent = cityName;
+}
