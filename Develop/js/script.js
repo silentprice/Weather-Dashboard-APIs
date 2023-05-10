@@ -61,7 +61,7 @@ function getFiveDayWeather(lat, lon) {
             if (i % 8 === 0) {
 
                 let fiveDayDate =document.createElement("p");
-                fiveDayTemp.setAttribute("class", "five-day-date");
+                fiveDayDate.setAttribute("class", "five-day-date");
                 fiveDayDate = dayjs().add(dayIndex, "days").format('dddd');
                 forecastContainer.append(fiveDayDate);
                 dayIndex++
