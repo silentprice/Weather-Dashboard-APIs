@@ -1,6 +1,4 @@
-:root {
- 
-}
+
 header {
     margin-left: 2px;
     background-color: #7ac2ee;
@@ -25,3 +23,18 @@ main {
     height: auto;
     width: 300px;
   }
+  .five-day-date {
+    display: flex;
+  flex-direction: row;
+    text-align: center; /* Center the text within the element */
+  }
+  
+  .five-day-temp,
+  .five-day-humid,
+  .five-day-wind {
+    flex-basis: calc(20% - 1rem); /* Set the initial width of the other elements to 20% minus a small margin */
+    margin: 0.5rem; /* Add a small margin around each element */
+    text-align: center; /* Center the text within the element */
+  }
+  
+
