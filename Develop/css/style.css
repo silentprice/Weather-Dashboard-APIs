@@ -3,4 +3,25 @@
 }
 header {
     margin-left: 2px;
+    background-color: #7ac2ee;
 }
+header h1 {
+    text-align: center;
+    color: blue;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: space-between;
+    flex-direction: row;
+    margin-top: 4px;
+  }
+  .current-weather {
+    text-align: center;
+    padding: 5px;
+    border: 1px solid blue;
+    border-radius: 5px;
+    height: auto;
+    width: 300px;
+  }
