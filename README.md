@@ -11,4 +11,4 @@ Next creating functions to run the api depending on the city wanting to be searc
 * https://silentprice.github.io/Weather-Dashboard-APIs/
 
 ## Screenshot
-![screenshot](./Develop/)
+![screenshot](./Develop/images/Screenshot%202023-05-11%20at%208.51.51%20PM.png)
