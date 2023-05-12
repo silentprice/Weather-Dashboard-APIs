@@ -5,10 +5,10 @@
 Next creating functions to run the api depending on the city wanting to be searched by the user. I created a index to run the 5 day forecast in the script file so the html would not have to be so repeatative. Lastly i created a function to save search history of chosen city or location to be saved in a list. 
 
 ## Github Repo URL
-* 
+* https://github.com/silentprice/Weather-Dashboard-APIs
 
 ## Live URL
-* 
+* https://silentprice.github.io/Weather-Dashboard-APIs/
 
 ## Screenshot
 ![screenshot](./Develop/)
