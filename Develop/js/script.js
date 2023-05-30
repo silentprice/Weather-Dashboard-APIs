@@ -10,14 +10,56 @@ const forecastContainer = document.querySelector(".forecast");
 
 const currentCity = document.getElementById("city-name");
 const weatherIcon = document.querySelector(".weather-icon");
+const currentTemp = document.getElementById("temperature")
+const currentHumid = document.getElementById("humidity")
+const currentWind = document.getElementById("wind-speed")
+
+const historyContainer = document.getElementById("history")
 
 // Define arrays for search history and city names
 let searchHistory = [];
 
 searchBtn.addEventListener("click", function () {
-  let city = searchInput.value;
-  getWeatherData(city);
+  if (searchInput.value) {
+    let city = searchInput.value;
+    getWeatherData(city);
+    saveWeather(city)
+  }
+  return
 });
+
+function saveWeather(city) {
+  let storage = JSON.parse(localStorage.getItem('weatherHistory'))
+  if (storage === null) {
+    storage = []
+  }
+
+  storage.push(city)
+  localStorage.setItem('weatherHistory', JSON.stringify(storage))
+
+  getHistory()
+}
+
+function getHistory() {
+  let storage = JSON.parse(localStorage.getItem('weatherHistory'))
+  if (storage === null) {
+    historyContainer.textContent = "No Old Searches"
+  } else {
+    historyContainer.textContent = ""
+
+    for(let i = 0; i < storage.length; i++) {
+      let historyBtn = document.createElement('button')
+      historyBtn.textContent = storage[i]
+      historyContainer.append(historyBtn)
+
+      historyBtn.addEventListener('click', function(event) {
+        let clicked = event.target.textContent
+        getWeatherData(clicked)
+      })
+    }
+  }
+
+}
 
 // Define function to fetch weather data from API for a given city name
 function getWeatherData(cityName) {
@@ -38,6 +80,9 @@ function getWeatherData(cityName) {
           "src",
           `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`
         );
+        currentTemp.textContent = "Temperature: " + data.main.temp + " F"
+        currentHumid.textContent = "Humidity: " + data.main.humidity +  " %"
+        currentWind.textContent = "Wind Speed: " + data.wind.speed + " MPH"
 
         document.getElementById("date").textContent =
           dayjs().format("dddd MMMM DD, YYYY");
@@ -48,6 +93,7 @@ function getWeatherData(cityName) {
 }
 
 function getFiveDayWeather(lat, lon) {
+  forecastContainer.textContent = ""
   try {
     fetch(
       `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${weatherAPIKey}&units=imperial`
@@ -101,3 +147,5 @@ function addToSearchHistory(cityName) {
   const searchHistoryItem = document.createElement("li");
   searchHistoryItem.textContent = cityName;
 }
+
+getHistory()
